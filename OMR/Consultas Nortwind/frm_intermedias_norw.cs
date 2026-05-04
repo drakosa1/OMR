@@ -7,7 +7,9 @@ namespace OMR
 {
     public partial class frm_intermedias_norw : Form
     {
-        string cadena = "Server=localhost;Database=Northwind;Integrated Security=true;";
+        //string cadena = "Server=localhost;Database=Northwind;Integrated Security=true;";
+        string cadena = @"Server=.\SQLEXPRESS;Database=Northwind;Integrated Security=true;";
+
 
         public frm_intermedias_norw()
         {
@@ -93,5 +95,10 @@ namespace OMR
                 MessageBox.Show("Error en consulta 3: " + ex.Message);
             }
         }
+
+        /*private void frm_intermedias_norw_Load(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }

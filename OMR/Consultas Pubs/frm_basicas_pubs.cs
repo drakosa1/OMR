@@ -7,8 +7,8 @@ namespace OMR
 {
     public partial class frm_basicas_pubs : Form
     {
-        string cadena = "Server=localhost;Database=pubs;Integrated Security=true;";
-
+        //string cadena1 = "Server=localhost;Database=pubs;Integrated Security=true;";
+        string cadena1 = @"Server=.\SQLEXPRESS;Database=pubs;Integrated Security=true;";
         public frm_basicas_pubs()
         {
             InitializeComponent();
@@ -40,11 +40,11 @@ namespace OMR
         }
         // CONSULTA 1: LISTAR AUTORES
       
-        private void button1_Click(object sender, EventArgs e)
+        /*private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                using (SqlConnection cn = new SqlConnection(cadena))
+                using (SqlConnection cn = new SqlConnection(cadena1))
                 {
                     SqlCommand cmd = new SqlCommand("spPubs_ListarAutores", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -60,11 +60,8 @@ namespace OMR
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        // =========================
+        }*/
         // CONSULTA 2: BUSCAR TÍTULO
-        // =========================
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
@@ -75,7 +72,7 @@ namespace OMR
 
             try
             {
-                using (SqlConnection cn = new SqlConnection(cadena))
+                using (SqlConnection cn = new SqlConnection(cadena1))
                 {
                     SqlCommand cmd = new SqlCommand("spPubs_BuscarTituloPorID", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -108,7 +105,7 @@ namespace OMR
 
             try
             {
-                using (SqlConnection cn = new SqlConnection(cadena))
+                using (SqlConnection cn = new SqlConnection(cadena1))
                 {
                     SqlCommand cmd = new SqlCommand("spPubs_TitulosPrecioMayor", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -141,7 +138,7 @@ namespace OMR
 
             try
             {
-                using (SqlConnection cn = new SqlConnection(cadena))
+                using (SqlConnection cn = new SqlConnection(cadena1))
                 {
                     SqlCommand cmd = new SqlCommand("spPubs_EditorialesPorPais", cn);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -166,9 +163,27 @@ namespace OMR
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
+       private void button1_Click_1(object sender, EventArgs e)
+       {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(cadena1))
+                {
+                    SqlCommand cmd = new SqlCommand("spPubs_ListarAutores", cn);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
+

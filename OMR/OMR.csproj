@@ -71,16 +71,16 @@
     <Compile Include="Employees.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>
-    <Compile Include="frm_basicas_northwind.cs">
+    <Compile Include="Consultas Nortwind\frm_basicas_northwind.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_basicas_northwind.Designer.cs">
+    <Compile Include="Consultas Nortwind\frm_basicas_northwind.Designer.cs">
       <DependentUpon>frm_basicas_northwind.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_basicas_pubs.cs">
+    <Compile Include="Consultas Pubs\frm_basicas_pubs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_basicas_pubs.Designer.cs">
+    <Compile Include="Consultas Pubs\frm_basicas_pubs.Designer.cs">
       <DependentUpon>frm_basicas_pubs.cs</DependentUpon>
     </Compile>
     <Compile Include="MENU.cs">
@@ -89,28 +89,28 @@
     <Compile Include="MENU.Designer.cs">
       <DependentUpon>MENU.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_avanzadas_norw.cs">
+    <Compile Include="Consultas Nortwind\frm_avanzadas_norw.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_avanzadas_norw.Designer.cs">
+    <Compile Include="Consultas Nortwind\frm_avanzadas_norw.Designer.cs">
       <DependentUpon>frm_avanzadas_norw.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_avanzadas_pubs.cs">
+    <Compile Include="Consultas Pubs\frm_avanzadas_pubs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_avanzadas_pubs.Designer.cs">
+    <Compile Include="Consultas Pubs\frm_avanzadas_pubs.Designer.cs">
       <DependentUpon>frm_avanzadas_pubs.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_intermedias_norw.cs">
+    <Compile Include="Consultas Nortwind\frm_intermedias_norw.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_intermedias_norw.Designer.cs">
+    <Compile Include="Consultas Nortwind\frm_intermedias_norw.Designer.cs">
       <DependentUpon>frm_intermedias_norw.cs</DependentUpon>
     </Compile>
-    <Compile Include="frm_intermedias_pubs.cs">
+    <Compile Include="Consultas Pubs\frm_intermedias_pubs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_intermedias_pubs.Designer.cs">
+    <Compile Include="Consultas Pubs\frm_intermedias_pubs.Designer.cs">
       <DependentUpon>frm_intermedias_pubs.cs</DependentUpon>
     </Compile>
     <Compile Include="jobs.cs">
@@ -193,16 +193,25 @@
     <Compile Include="titles.cs">
       <DependentUpon>Pubs.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frm_basicas_pubs.resx">
+    <EmbeddedResource Include="Consultas Nortwind\frm_avanzadas_norw.resx">
+      <DependentUpon>frm_avanzadas_norw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas Pubs\frm_avanzadas_pubs.resx">
+      <DependentUpon>frm_avanzadas_pubs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas Pubs\frm_basicas_pubs.resx">
       <DependentUpon>frm_basicas_pubs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_intermedias_norw.resx">
+    <EmbeddedResource Include="Consultas Nortwind\frm_intermedias_norw.resx">
       <DependentUpon>frm_intermedias_norw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas Pubs\frm_intermedias_pubs.resx">
+      <DependentUpon>frm_intermedias_pubs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MENU.resx">
       <DependentUpon>MENU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_basicas_northwind.resx">
+    <EmbeddedResource Include="Consultas Nortwind\frm_basicas_northwind.resx">
       <DependentUpon>frm_basicas_northwind.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -213,6 +222,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Northwind.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -266,6 +276,8 @@
       <DependentUpon>Pubs.edmx</DependentUpon>
       <LastGenOutput>Pubs.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-consulta-48.png" />
+    <None Include="Resources\icons8-consultar-64 %282%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
